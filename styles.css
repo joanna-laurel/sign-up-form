@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'gidoleregular';
-  src: url('gidole-regular-webfont.woff2') format('woff2'),
+  src: url('fonts/gidole-regular-webfont.woff2') format('woff2'),
        url('gidole-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: 'wc_roughtrad_btaregular';
-  src: url('wc_roughtrad-webfont.woff2') format('woff2'),
+  src: url('fonts/wc_roughtrad-webfont.woff2') format('woff2'),
        url('wc_roughtrad-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -26,7 +26,6 @@
 
 * {
   margin: 0;
-  font-family: 'gidoleregular', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -56,14 +55,10 @@ input, button, textarea, select {
   font: inherit; /*inherit fonts for form controls*/
 }
 
-input {
-  width: 100%;
-}
-
 button {
   padding: .7rem 2.3rem;
   border-radius: .3rem;
-  font-size: .8rem;
+  /* font-size: .8rem; */
   color: white;
   background-color: rgb(76, 69, 88);
 }
@@ -80,11 +75,17 @@ label {
 input {
   margin-bottom: .8em;
   width: 20rem;;
-  /* width: clamp(20rem, 15vw, 30rem); */
+}
+
+input:user-valid {
+
+}
+
+input:user-invalid {
+
 }
 
 fieldset, /*main-div padding*/
-/* legend, */
 #explain-services-div,
 #create-account-div {
   padding: clamp(1rem, 5%, 3rem);
@@ -148,6 +149,7 @@ img#toad-logo {
 }
 
 #logo-words {
+  font-family: 'wc_roughtrad_btaregular';
   flex: 0 1 auto;
   /* width: clamp(100px, 30%, 100px); */
 }
@@ -162,6 +164,7 @@ img#toad-logo {
   font-size: clamp(1.5rem, 3vw, 3rem);
 }
 
+
 /*IDs: main*/
 
 #main-container-div {
@@ -169,7 +172,7 @@ img#toad-logo {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-
+  font-family: 'gidoleregular', Arial, Helvetica, sans-serif;
 }
 
 #explain-services-div {
