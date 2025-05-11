@@ -19,10 +19,11 @@
   </div>
   <div id="main-container-div">
     <div id="explain-services-div">
-      <p>Grumpy Toad thinks you're doing it wrong. Does the Toad know best? Will their daily words of wisdom change your life? Or will you simply have one more service to unsubscribe from?
-      </p>
-      <p>There's only one way to find out.
-      </p>
+      <div>
+        <p>Grumpy Toad thinks you're doing it wrong. Does the Toad know best? Will their daily words of wisdom change your life? Or will you simply have one more service to unsubscribe from?
+        </p>
+        <p>There's only one way to find out.</p>
+      </div>
     </div>
     <div id="form-div">
       <form action="">
@@ -30,39 +31,63 @@
           <legend>Try out the Toad!</legend>
           <div id="name-div">
             <div>
-              <label for="first-name">FIRST NAME</label>
-              <input type="text" id="first-name" name=" "minlength="1" maxlength="20" required>
+              <label for="first-name">FIRST NAME
+                <strong>
+                  <span aria-label="required">*</span>
+                </strong>
+              </label>
+              <input type="text" id="first-name" name=" "minlength="1" maxlength="20" required placeholder="or initial or nickname or something">
             </div>
             <div>
-              <label for="last-name">LAST NAME</label>
-              <input type="text" id="last-name" name=" "minlength="1" maxlength="20" required>
+              <label for="last-name">LAST NAME
+                <strong>
+                  <span aria-label="required">*</span>
+                </strong>
+              </label>
+              <input type="text" id="last-name" name=" "minlength="1" maxlength="20" required placeholder="or superhero suffix aka 'the Toad'">
             </div>
           </div>
           <div id="contact-div">
             <div>
-              <label for="email">EMAIL</label>
-              <input type="email" id="email" name="" required>
+              <label for="email">EMAIL
+                <strong>
+                  <span aria-label="required">*</span>
+                </strong>
+              </label>
+              <input type="email" id="email" name="" required placeholder="someone@somewhere.com">
             </div>
             <div>
-              <label for="phone">PHONE NUMBER</label>
-              <input type="tel" id="phone" name="" required>
+              <label for="phone">PHONE NUMBER
+                <strong>
+                  <span aria-label="required">*</span>
+                </strong>
+              </label>
+              <input type="tel" id="phone" name="" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-000-0000">
             </div>
           </div>
           <div id="password-div">
             <div>
-              <label for="password">PASSWORD</label>
-              <input type="password" id="password" name="" maxlength="20" required>
+              <label for="password">PASSWORD
+                <strong>
+                  <span aria-label="required">*</span>
+                </strong>
+              </label>
+              <input type="password" id="password" name="" maxlength="20" required placeholder="make it at least five characters?" minlength="5">
             </div>
             <div>
-              <label for="verify-password">CONFIRM PASSWORD</label>
-              <input type="password" id="verify-password" name="" required>
+              <label for="verify-password">RE-TYPE PASSWORD
+                <strong>
+                  <span aria-label="required">*</span>
+                </strong>
+              </label>
+              <input type="password" id="verify-password" name="" required placeholder="yes you can copy-paste, we can't stop you" minlength="5"> 
             </div>
           </div>
         </fieldset>
       </p>
       <div id="create-account-div">
         <button type="submit">CREATE ACCOUNT</button>
-        <p>Already acquainted with Grumpy Toad? Sign in to your account.</p>
+        <p>Already acquainted with Grumpy Toad? <a href="">Sign in to your account.</a></p>
       </div>
       </form>
     </div>
