@@ -1,0 +1,183 @@
+/*fonts*/
+
+@font-face {
+  font-family: 'gidoleregular';
+  src: url('gidole-regular-webfont.woff2') format('woff2'),
+       url('gidole-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'wc_roughtrad_btaregular';
+  src: url('wc_roughtrad-webfont.woff2') format('woff2'),
+       url('wc_roughtrad-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/*elements including jobot reset: working edition*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: 'gidoleregular', Arial, Helvetica, sans-serif;
+}
+
+body {
+  line-height: 1.5; /*more readable*/
+  -webkit-font-smoothing: antialiased; /*better text rendering*/
+  display: flex;
+}
+
+div {
+  border: 1px solid blue;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; /*no text overflow of URLs or very long words*/
+}
+
+p {
+  text-wrap: pretty; /*prevent orphaning*/
+  margin: 1em 0em 0em 0em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance; /*no short lines, orphaned words*/
+}
+
+input, button, textarea, select {
+  font: inherit; /*inherit fonts for form controls*/
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  padding: .5rem;
+  border-radius: .3rem;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  border: none;
+}
+
+label {
+  font-size: .75rem;
+  color: rgb(85, 80, 80);
+}
+
+input {
+  margin-bottom: .8em;
+  width: clamp(10rem, 20vw, 30rem);
+}
+
+/*adjustable padding*/
+
+fieldset, 
+/* legend, */
+#explain-services-div,
+#create-account-div {
+  padding: clamp(1rem, 5%, 3rem);
+}
+
+
+/*IDs*/
+
+#sidebar-div {
+  font-family: 'wc_roughtrad_btaregular', Arial, Helvetica, sans-serif;
+  max-width: 30vw;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+img#toad-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#logo-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 15vh;
+  width: 100%;
+  height: fit-content;
+  z-index: 5;
+  padding: clamp(1rem, 5%, 3rem) clamp(2rem, 20%, 5rem);
+  background-color: grey;
+  opacity: 80%;
+}
+
+img#toad-logo {
+  color: white;
+  width: clamp(3rem, 8vw, 10rem);
+  /* height: 50%; */
+  object-fit: contain;
+  flex: 0 1 auto;
+  margin-right: clamp(1rem, 3%, 2rem);
+}
+
+#logo-words {
+  flex: 0 1 auto;
+  /* width: clamp(100px, 30%, 100px); */
+}
+
+#logo-words > h1 {
+  line-height: 1.1;
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: white;
+}
+
+#logo-words #toad {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+#main-container-div {
+  width: 100%;
+  /* height: 100vh; */
+}
+
+#explain-services-div {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+#name-div, 
+#contact-div, 
+#password-div {
+  display: flex;
+  /* justify-content: ; */
+  flex-wrap: wrap;
+  /* max-width: 60vw; */
+  
+}
+
+#name-div > div, 
+#contact-div > div, 
+#password-div > div {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto; 
+  margin-right: clamp(1rem, 5%, 3rem);;
+}
+
+
+
