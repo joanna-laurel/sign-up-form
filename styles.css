@@ -58,13 +58,20 @@ input, button, textarea, select {
 button {
   padding: .7rem 2.3rem;
   border-radius: .3rem;
-  /* font-size: .8rem; */
   color: white;
   background-color: rgb(76, 69, 88);
 }
 
 button:hover {
   background-color: rgb(148, 141, 160);
+}
+
+a {
+  color: rgb(76, 69, 88);
+}
+
+a:hover {
+  color:rgb(148, 141, 160)
 }
 
 label {
@@ -75,14 +82,27 @@ label {
 input {
   margin-bottom: .8em;
   width: 20rem;;
+  padding-left: .3rem;
+  border: 1px solid rgb(148, 141, 160);
+  border-radius: .2rem;
+  /* background-color:  rgb(148, 141, 160); */
+}
+
+::placeholder {
+  color: rgb(167, 165, 173);
 }
 
 input:user-valid {
-
+  border: 2px solid rgb(76, 69, 88); 
 }
 
 input:user-invalid {
+  border: 2px solid red;
+}
 
+input:focus {
+  outline-color: 2px solid green;
+  box-shadow: .1rem .2rem .5rem rgb(148, 141, 160);
 }
 
 fieldset, /*main-div padding*/
@@ -94,16 +114,20 @@ fieldset, /*main-div padding*/
 legend {
   border: none;
   position: absolute;
+  font-size: 1.3rem;
   top: clamp(2rem, 5%, 3rem);
+  margin-left: -.1rem;
 }
 
 fieldset {
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   border: none;
-  padding-top: clamp(5rem, 11%, 8rem);
+  box-shadow: .1rem .2rem .5rem rgb(148, 141, 160);
+  /* padding-top: clamp(5rem, 11%, 8rem); */
+  padding-top: 5rem;
 }
 
 
@@ -142,7 +166,6 @@ img#toad-photo {
 img#toad-logo {
   color: white;
   width: clamp(3rem, 8vw, 10rem);
-  /* height: 50%; */
   object-fit: contain;
   flex: 0 1 auto;
   margin-right: clamp(1rem, 3%, 2rem);
@@ -151,7 +174,6 @@ img#toad-logo {
 #logo-words {
   font-family: 'wc_roughtrad_btaregular';
   flex: 0 1 auto;
-  /* width: clamp(100px, 30%, 100px); */
 }
 
 #logo-words > h1 {
@@ -172,6 +194,8 @@ img#toad-logo {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  min-width: 70vw;
+  background-color: rgb(237, 235, 240);
   font-family: 'gidoleregular', Arial, Helvetica, sans-serif;
 }
 
@@ -179,7 +203,11 @@ img#toad-logo {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  padding-right: (3rem, 15vw, 20rem);
+  /* padding-right: (3rem, 15vw, 20rem); */
+}
+
+#explain-services-div > div {
+  max-width: 87ch;
 }
 
 /* #form-div {
@@ -190,10 +218,7 @@ img#toad-logo {
 #contact-div, 
 #password-div {
   display: flex;
-  /* justify-content: ; */
   flex-wrap: wrap;
-  /* max-width: 60vw; */
-  
 }
 
 #name-div > div, 
