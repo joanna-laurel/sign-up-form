@@ -3,19 +3,17 @@
 @font-face {
   font-family: 'gidoleregular';
   src: url('fonts/gidole-regular-webfont.woff2') format('woff2'),
-       url('gidole-regular-webfont.woff') format('woff');
+       url('fonts/gidole-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
   font-family: 'wc_roughtrad_btaregular';
   src: url('fonts/wc_roughtrad-webfont.woff2') format('woff2'),
-       url('wc_roughtrad-webfont.woff') format('woff');
+       url('fonts/wc_roughtrad-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 /*elements including jobot reset: working edition*/
@@ -31,11 +29,6 @@
 body {
   line-height: 1.5; /*more readable*/
   -webkit-font-smoothing: antialiased; /*better text rendering*/
-  display: flex;
-}
-
-div {
-  /* border: 1px solid blue; */
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -45,6 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty; /*prevent orphaning*/
   margin: 1em 0em 0em 0em;
+  font-size: 1.3rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,7 +69,6 @@ a:hover {
 }
 
 label {
-  font-size: .75rem;
   color: rgb(85, 80, 80);
 }
 
@@ -85,7 +78,7 @@ input {
   padding-left: .3rem;
   border: 1px solid rgb(148, 141, 160);
   border-radius: .2rem;
-  /* background-color:  rgb(148, 141, 160); */
+  height: 2rem;
 }
 
 ::placeholder {
@@ -93,41 +86,60 @@ input {
 }
 
 input:user-valid {
-  border: 2px solid rgb(76, 69, 88); 
+  outline: 2px solid rgb(76, 69, 88); 
 }
 
 input:user-invalid {
-  border: 2px solid red;
+  outline: 2px solid red;
+  background-color: rgb(233, 224, 224);
 }
 
+input:valid:focus,
+input:invalid:focus,
 input:focus {
-  outline-color: 2px solid green;
+  outline: 2px solid rgb(79, 3, 201);
   box-shadow: .1rem .2rem .5rem rgb(148, 141, 160);
 }
 
-fieldset, /*main-div padding*/
-#explain-services-div,
-#create-account-div {
-  padding: clamp(1rem, 5%, 3rem);
-}
 
 legend {
   border: none;
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   top: clamp(2rem, 5%, 3rem);
   margin-left: -.1rem;
 }
 
-fieldset {
+form > fieldset {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* background-color: antiquewhite; */
   border: none;
-  box-shadow: .1rem .2rem .5rem rgb(148, 141, 160);
-  /* padding-top: clamp(5rem, 11%, 8rem); */
-  padding-top: 5rem;
+  box-shadow: .1rem .1rem .6rem rgb(174, 168, 184);
+  padding-top: 6rem;
+}
+
+footer {
+  font-family: 'gidoleregular', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: .8rem; 
+  height: 2rem;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+ 
+/*main-div padding*/
+
+fieldset,
+#explain-services-div,
+#create-account-div,
+#footer {
+  padding: clamp(1rem, 5%, 3rem);
+}
+
+#body-div {
+  display: flex;
 }
 
 
@@ -136,17 +148,21 @@ fieldset {
 #sidebar-div {
   font-family: 'wc_roughtrad_btaregular', Arial, Helvetica, sans-serif;
   max-width: 30vw;
-  height: 100vh;
+  min-height: 96vh;
+  height: auto;
   overflow: hidden;
   position: relative;
   z-index: 0;
+  display: flex;
+  justify-content: center;
 }
 
 img#toad-photo {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
-  object-position: center;
+  object-position: absolute;
+  top: 0;
 }
 
 #logo-div {
@@ -155,20 +171,20 @@ img#toad-photo {
   justify-content: center;
   position: absolute;
   left: 0;
-  top: 15vh;
+  top: clamp(11vh, 30rem, 13vh);
+  top: 11vh;
   width: 100%;
   height: fit-content;
   z-index: 5;
-  padding: clamp(1rem, 5%, 3rem) clamp(2rem, 20%, 5rem);
+  padding: clamp(1.5rem, 5%, 3rem) ;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 img#toad-logo {
   color: white;
-  width: clamp(3rem, 8vw, 10rem);
+  width: clamp(4rem, 4vw, 6rem);
   object-fit: contain;
   flex: 0 1 auto;
-  margin-right: clamp(1rem, 3%, 2rem);
 }
 
 #logo-words {
@@ -178,22 +194,23 @@ img#toad-logo {
 
 #logo-words > h1 {
   line-height: 1.1;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
   color: white;
 }
 
 #logo-words #toad {
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 1.5vw, 2.25rem);
 }
 
 
 /*IDs: main*/
 
 #main-container-div {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: auto;
   min-width: 70vw;
   background-color: rgb(237, 235, 240);
   font-family: 'gidoleregular', Arial, Helvetica, sans-serif;
@@ -203,22 +220,18 @@ img#toad-logo {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  /* padding-right: (3rem, 15vw, 20rem); */
+  margin-top: -3rem;
 }
 
 #explain-services-div > div {
-  max-width: 87ch;
+  max-width: 100ch;
 }
-
-/* #form-div {
-  justify-content: center;
-} */
 
 #name-div, 
 #contact-div, 
 #password-div {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */  /*use later for mobile optimization?*/ 
 }
 
 #name-div > div, 
@@ -233,4 +246,14 @@ img#toad-logo {
 #create-account-div {
   padding-top: 1rem;
 }
+
+#create-account-div > p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#create-account-div > p > span {
+  text-wrap: nowrap;
+}
+
 
