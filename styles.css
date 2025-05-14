@@ -74,9 +74,10 @@ label {
 
 input {
   margin-bottom: .8em;
-  width: 20rem;;
+  width: 20rem;
   padding-left: .3rem;
-  border: 1px solid rgb(148, 141, 160);
+  border: none;
+  /* outline-color:  rgb(148, 141, 160); */
   border-radius: .2rem;
   height: 2rem;
 }
@@ -86,21 +87,21 @@ input {
 }
 
 input:user-valid {
-  outline: 2px solid rgb(76, 69, 88); 
+  outline: 2px solid rgb(76, 69, 88);
 }
 
 input:user-invalid {
   outline: 2px solid red;
-  background-color: rgb(233, 224, 224);
+  background-color: rgb(243, 220, 220);
 }
 
 input:valid:focus,
 input:invalid:focus,
 input:focus {
-  outline: 2px solid rgb(79, 3, 201);
+  outline: 2px solid rgb(218, 190, 131);
+  background-color: white;
   box-shadow: .1rem .2rem .5rem rgb(148, 141, 160);
 }
-
 
 legend {
   border: none;
